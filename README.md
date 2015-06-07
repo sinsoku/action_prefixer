@@ -1,6 +1,9 @@
+[![Gem Version](https://badge.fury.io/rb/action_prefixer.svg)](http://badge.fury.io/rb/action_prefixer)
+[![Build Status](https://travis-ci.org/sinsoku/action_prefixer.svg?branch=master)](https://travis-ci.org/sinsoku/action_prefixer)
+
 # ActionPrefixer
 
-TODO: Write a gem description
+It appends a path to searching partial views.
 
 ## Installation
 
@@ -20,7 +23,36 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+I’ve seen this:
+
+```
+app/views/users/_header.html.erb
+app/views/users/_footer.html.erb
+app/views/users/_blog.html.erb
+app/views/users/_tag.html.erb
+...(too long)
+```
+
+ActionPrefixer provides a path for partial views.
+
+```
+app/views/users/_header.html.erb
+app/views/users/_footer.html.erb
+app/views/users/index/_blog.html.erb
+app/views/users/show/_tag.html.erb
+```
+
+Also, invoking the partials is simpler than this approach. Instead of:
+
+```erb
+<%= render 'users/index/blog' %>
+```
+
+This is possible:
+
+```erb
+<%= render 'blog' %>
+```
 
 ## Contributing
 
