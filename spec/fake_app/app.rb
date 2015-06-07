@@ -4,7 +4,7 @@ require 'action_view/railtie'
 module FakeApp
   class Application < Rails::Application
     config.secret_token = [*'A'..'z'].join
-    config.session_store :cookie_store, :key => '_myapp_session'
+    config.session_store :cookie_store, key: '_myapp_session'
     config.active_support.deprecation = :log
     config.eager_load = false
     config.root = File.dirname(__FILE__)
@@ -25,6 +25,7 @@ class UsersController < ApplicationController
   end
 
   def index; end
+
   def show; end
 end
 

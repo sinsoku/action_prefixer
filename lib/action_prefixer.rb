@@ -1,4 +1,4 @@
-require "action_prefixer/version"
+require 'action_prefixer/version'
 
 module ActionPrefixer
   module ActionPrefixes
