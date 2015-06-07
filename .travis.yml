@@ -1,3 +1,8 @@
 language: ruby
 rvm:
-  - 2.2.0
+  - 2.2.2
+gemfile:
+  - gemfiles/rails_41.gemfile
+  - gemfiles/rails_42.gemfile
+notifications:
+  email: false
