@@ -5,5 +5,10 @@ gemfile:
   - gemfiles/rails_40.gemfile
   - gemfiles/rails_41.gemfile
   - gemfiles/rails_42.gemfile
+  - gemfiles/rails_stable.gemfile
+  - gemfiles/rails_edge.gemfile
 notifications:
   email: false
+matrix:
+  allow_failures:
+    - gemfile: gemfiles/rails_edge.gemfile
