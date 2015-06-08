@@ -5,11 +5,10 @@ module ActionPrefixer
     extend ActiveSupport::Concern
 
     included do
-      before_action :expand_lookup_paths
-    end
-
-    def expand_lookup_paths
-      lookup_context.prefixes = ["#{controller_path}/#{action_name}"] + lookup_context.prefixes
+      before_action do
+        lookup_context.prefixes =
+          ["#{controller_path}/#{action_name}"] + lookup_context.prefixes
+      end
     end
   end
 
