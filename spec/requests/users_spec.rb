@@ -4,14 +4,22 @@ feature 'Users' do
   scenario 'rendering index page' do
     visit '/users'
 
-    expect(page).to have_content 'Users#index'
-    expect(page).to have_content 'Hello, World'
+    # common views in controller
+    expect(page).to have_content 'Header'
+    expect(page).to have_content 'Footer'
+
+    # a unique view in action
+    expect(page).to have_content 'Blog'
   end
 
   scenario 'rendering show page' do
     visit '/users/1'
 
-    expect(page).to have_content 'Users#show'
-    expect(page).to have_content 'Hello, World'
+    # share views in controller
+    expect(page).to have_content 'Header'
+    expect(page).to have_content 'Footer'
+
+    # a unique view in action
+    expect(page).to have_content 'Tag'
   end
 end
